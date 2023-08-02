@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="gameResult"
+            type="uz.os3ketchup.composition.domain.entity.GameResult" />
+    </data>
+
+    <LinearLayout
+        android:layout_margin="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".presentation.GameFinishedFragment">
+
+
+        <ImageView
+            android:id="@+id/iv_finish"
+            app:setImage="@{gameResult}"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tv_required_score"
+            android:textSize="18sp"
+            android:paddingTop="48dp"
+            android:paddingStart="8dp"
+            app:requiredAnswer="@{gameResult.gameSettings.minCountRightAnswers}"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_score_answers"
+            android:textSize="18sp"
+            android:padding="8dp"
+            app:scoreAnswer="@{gameResult.countOfRightAnswers}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+
+        <TextView
+            android:id="@+id/tv_required_percentage"
+            android:textSize="18sp"
+            android:padding="8dp"
+            app:requiredPercentage="@{gameResult.gameSettings.minPercentRightAnswers}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+
+        <TextView
+            android:id="@+id/tv_score_percentage"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            app:scorePercentage="@{gameResult}"
+            android:layout_height="wrap_content"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_retry"
+                android:text="@string/retry"
+                android:layout_gravity="bottom|center"
+                android:backgroundTint="@color/classic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

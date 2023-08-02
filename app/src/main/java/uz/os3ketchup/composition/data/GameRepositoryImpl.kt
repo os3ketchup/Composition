@@ -33,20 +33,20 @@ object GameRepositoryImpl : GameRepository {
         return when (level) {
             Level.TEST -> GameSettings(
                 10,
-                30,
-                20,
+                5,
+                2,
                 75
             )
             Level.EASY -> GameSettings(
                 10,
                 30,
-                20,
+                3,
                 75
             )
             Level.NORMAL -> GameSettings(
                 10,
                 30,
-                20,
+                5,
                 75
             )
             Level.HARD -> GameSettings(
